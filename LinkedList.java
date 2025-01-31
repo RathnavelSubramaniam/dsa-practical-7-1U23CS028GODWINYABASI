@@ -46,15 +46,15 @@ public static void main(String[] args) {
             System.out.println("LINKED LIST CREATED");
             System.out.println("LINKED LIST BEFORE INSERTING");
             list.displayList();
-            System.out.println("ENTER THE POSITON WHERE YOU WANT TO INSERT");
-            if(sc.hasNextInt())
-            {
-            pos=sc.nextInt();
+            //System.out.println("ENTER THE POSITON WHERE YOU WANT TO INSERT");
+            //if(sc.hasNextInt())
+            //{
+           //pos=sc.nextInt();
             System.out.println("ENTER THE ELEMENT TO BE INSERTED:");
             if(sc.hasNextInt())
             {
             data1=sc.nextInt();
-            list.insertMiddle(data1,pos);
+            list.insertBegin(data1);
             System.out.println("LINKED LIST AFTER INSERTING");
             list.displayList();
             }
@@ -64,19 +64,14 @@ public static void main(String[] args) {
               System.exit(0);
             }
             }
-            else
-            {
-              System.out.println("Enter integers only");
-              System.exit(0);
-            }
            }
-        }
     }
-public void insertMiddle() 
-    {    
-//TYPE YOUR CODE HERE
-    }
-
+public void insertBegin(int data) {     
+    Node newNode = new Node(data);
+    newNode.next = head;
+    head = newNode;
+    System.out.println("Element Inserted");
+}
 public void displayList() {
         Node current = head;
         while (current != null) {
